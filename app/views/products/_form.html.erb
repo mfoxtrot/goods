@@ -1,5 +1,6 @@
 <%= simple_form_for @product do |f| %>
   <%= f.input :name, placeholder: "Наименование" %>
   <%= f.input :description, placeholder: "Описание" %>
+  <%= f.input :image, as: :file %>
   <%= f.button :submit %>
 <% end %>

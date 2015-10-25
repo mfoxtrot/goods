@@ -42,6 +42,6 @@ before_action :authenticate_user!
     end
 
     def product_params
-      params.require(:product).permit(:name, :description)
+      params.require(:product).permit(:name, :description, :image)
     end
 end

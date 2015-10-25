@@ -14,7 +14,7 @@
       <tr>
         <td><%= p.name %></td>
         <td><%= p.description %></td>
-        <td></td>
+        <td><%= image_tag(p.image.url) if p.image %></td>
         <td><%= link_to "Просмотр", p %><br><%= link_to "Редактировать", edit_product_path(p.id) %><br><%= link_to "Удалить", product_path(p), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
