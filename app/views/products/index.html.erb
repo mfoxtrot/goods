@@ -1,0 +1,22 @@
+<%= link_to "Новый товар", new_product_path %>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Описание</th>
+      <th>Фото</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.description %></td>
+        <td></td>
+        <td><%= link_to "Просмотр", p %><br><%= link_to "Редактировать", edit_product_path(p.id) %><br><%= link_to "Удалить", product_path(p), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
