@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025145320) do
+ActiveRecord::Schema.define(version: 20151028191833) do
 
   create_table "products", force: true do |t|
     t.string  "name"
     t.text    "description"
     t.integer "user_id"
     t.string  "image_uid"
+    t.boolean "pro_mark"
+    t.string  "shop_name"
   end
 
   create_table "users", force: true do |t|
@@ -34,6 +36,12 @@ ActiveRecord::Schema.define(version: 20151025145320) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "surname"
+    t.string   "avatar"
+    t.string   "passport_scan"
+    t.date     "birthdate"
+    t.string   "type"
+    t.string   "shop_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
